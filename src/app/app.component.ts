@@ -9,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'core';
   opened = true;
-  @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
+  @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
 
   ngOnInit() {
     console.log(window.innerWidth)
@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize(event: any) {
     if (event.target.innerWidth < 768) {
       this.sidenav.fixedTopGap = 55;
       this.opened = false;

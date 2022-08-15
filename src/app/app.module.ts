@@ -10,12 +10,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule  } from '@angular/material/button';
+import { CardComponentComponent } from './card-component/card-component.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [	
+    AppComponent,
+      CardComponentComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +29,8 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatGridListModule,
     MatListModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
