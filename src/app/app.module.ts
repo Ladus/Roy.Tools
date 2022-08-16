@@ -13,12 +13,19 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule  } from '@angular/material/button';
 import { CardComponentComponent } from './card-component/card-component.component';
+import { MsalModule } from '@azure/msal-angular';
+import { PublicClientApplication } from '@azure/msal-browser';
+import { HomePageComponent } from './home-page/home-page.component';
+import { MusicPageComponent } from './music-page/music-page.component';
 
+const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
-      CardComponentComponent
+      CardComponentComponent,
+      HomePageComponent,
+      MusicPageComponent
    ],
   imports: [
     BrowserModule,
@@ -30,7 +37,18 @@ import { CardComponentComponent } from './card-component/card-component.componen
     MatGridListModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MsalModule.forRoot( new PublicClientApplication({
+      auth: {
+        clientId: '46b2788a-0799-48cb-aad5-89e3ddf6f6f6', // Application (client) ID from the app registration
+        authority: 'https://login.microsoftonline.com/consumers/', // The Azure cloud instance and the app's sign-in audience (tenant ID, common, organizations, or consumers)
+        redirectUri: 'http://localhost:4200'// This is your redirect URI
+      },
+      cache: {
+        cacheLocation: 'localStorage',
+        storeAuthStateInCookie: isIE, // Set to true for Internet Explorer 11
+      }
+    }), null!, null!)
   ],
   providers: [],
   bootstrap: [AppComponent]
