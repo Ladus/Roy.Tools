@@ -42,7 +42,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       auth: {
         clientId: '46b2788a-0799-48cb-aad5-89e3ddf6f6f6', // Application (client) ID from the app registration
         authority: 'https://login.microsoftonline.com/consumers/', // The Azure cloud instance and the app's sign-in audience (tenant ID, common, organizations, or consumers)
-        redirectUri: 'https://roy.tools' // This is your redirect URI
+        redirectUri: 'https://roy.tools/' // This is your redirect URI
       },
       cache: {
         cacheLocation: 'localStorage',
