@@ -13,6 +13,9 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+// Roy.Tools Pallette
+@import 'colors.scss';
+
 $fontConfig: (
   display-4: mat-typography-level(112px, 112px, 300, 'Roboto', -0.0134em),
   display-3: mat-typography-level(56px, 56px, 400, 'Roboto', -0.0089em),
@@ -29,42 +32,13 @@ $fontConfig: (
   input: mat-typography-level(inherit, 1.125, 400, 'Roboto', 1.5px)
 );
 
-// Foreground Elements
-
-// Light Theme Text
-$dark-text: #000000;
-$dark-primary-text: rgba($dark-text, 0.87);
-$dark-accent-text: rgba($dark-primary-text, 0.54);
-$dark-disabled-text: rgba($dark-primary-text, 0.38);
-$dark-dividers: rgba($dark-primary-text, 0.12);
-$dark-focused: rgba($dark-primary-text, 0.12);
-
-$mat-light-theme-foreground: (
-  base:              black,
-  divider:           $dark-dividers,
-  dividers:          $dark-dividers,
-  disabled:          $dark-disabled-text,
-  disabled-button:   rgba($dark-text, 0.26),
-  disabled-text:     $dark-disabled-text,
-  elevation:         black,
-  secondary-text:    $dark-accent-text,
-  hint-text:         $dark-disabled-text,
-  accent-text:       $dark-accent-text,
-  icon:              $dark-accent-text,
-  icons:             $dark-accent-text,
-  text:              $dark-primary-text,
-  slider-min:        $dark-primary-text,
-  slider-off:        rgba($dark-text, 0.26),
-  slider-off-active: $dark-disabled-text,
-);
-
 // Dark Theme text
-$light-text: #ffffff;
-$light-primary-text: $light-text;
-$light-accent-text: rgba($light-primary-text, 0.7);
-$light-disabled-text: rgba($light-primary-text, 0.5);
-$light-dividers: rgba($light-primary-text, 0.12);
-$light-focused: rgba($light-primary-text, 0.12);
+$light-text: $rt-fg-default;
+$light-primary-text: $rt-fg-default;
+$light-accent-text: rgba($rt-fg-default, 0.7);
+$light-disabled-text: rgba($rt-fg-default, 0.5);
+$light-dividers: rgba($rt-fg-default, 0.12);
+$light-focused: rgba($rt-fg-default, 0.12);
 
 $mat-dark-theme-foreground: (
   base:              $light-text,
@@ -86,47 +60,19 @@ $mat-dark-theme-foreground: (
 );
 
 // Background config
-// Light bg
-$light-background:    #fafafa;
-$light-bg-darker-5:   darken($light-background, 5%);
-$light-bg-darker-10:  darken($light-background, 10%);
-$light-bg-darker-20:  darken($light-background, 20%);
-$light-bg-darker-30:  darken($light-background, 30%);
-$light-bg-lighter-5:  lighten($light-background, 5%);
-$dark-bg-tooltip:     lighten(#2c2c2c, 20%);
-$dark-bg-alpha-4:     rgba(#2c2c2c, 0.04);
-$dark-bg-alpha-12:    rgba(#2c2c2c, 0.12);
-
-$mat-light-theme-background: (
-  background:               $light-background,
-  status-bar:               $light-bg-darker-20,
-  app-bar:                  $light-bg-darker-5,
-  hover:                    $dark-bg-alpha-4,
-  card:                     $light-bg-lighter-5,
-  dialog:                   $light-bg-lighter-5,
-  tooltip:                  $dark-bg-tooltip,
-  disabled-button:          $dark-bg-alpha-12,
-  raised-button:            $light-bg-lighter-5,
-  focused-button:           $dark-focused,
-  selected-button:          $light-bg-darker-20,
-  selected-disabled-button: $light-bg-darker-30,
-  disabled-button-toggle:   $light-bg-darker-10,
-  unselected-chip:          $light-bg-darker-10,
-  disabled-list-option:     $light-bg-darker-10,
-);
 
 // Dark bg
-$dark-background:     #2c2c2c;
+$dark-background:     $rt-fg-default;
 $dark-bg-lighter-5:   lighten($dark-background, 5%);
 $dark-bg-lighter-10:  lighten($dark-background, 10%);
 $dark-bg-lighter-20:  lighten($dark-background, 20%);
 $dark-bg-lighter-30:  lighten($dark-background, 30%);
-$light-bg-alpha-4:    rgba(#fafafa, 0.04);
-$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+$light-bg-alpha-4:    rgba($rt-fg-default, 0.04);
+$light-bg-alpha-12:   rgba($rt-fg-default, 0.12);
 
 // Background palette for dark themes.
 $mat-dark-theme-background: (
-  background:               $dark-background,
+  background:               $rt-header-bg,
   status-bar:               $dark-bg-lighter-20,
   app-bar:                  $dark-bg-lighter-5,
   hover:                    $light-bg-alpha-4,
@@ -157,10 +103,10 @@ body {
   --text-primary-darker-color: #{$light-primary-text};
 }
 $mat-primary: (
-  main: #4d3a85,
-  lighter: #f0c2ef,
-  darker: #b920b7,
-  200: #cc33ca, // For slide toggle,
+  main: #a879ff,
+  lighter: #a879ff,
+  darker: #831fea,
+  200: #831fea, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -171,18 +117,18 @@ $theme-primary: mat-palette($mat-primary, main, lighter, darker);
 
 
 body {
-  --accent-color: #797979;
-  --accent-lighter-color: #d7d7d7;
-  --accent-darker-color: #5c5c5c;
+  --accent-color: $rt-fg-muted;
+  --accent-lighter-color: $rt-fg-default;
+  --accent-darker-color: $rt-fg-subtle;
   --text-accent-color: #{$light-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$light-primary-text};
 }
 $mat-accent: (
-  main: #797979,
-  lighter: #d7d7d7,
-  darker: #5c5c5c,
-  200: #797979, // For slide toggle,
+  main: $rt-fg-muted,
+  lighter: $rt-fg-default,
+  darker: $rt-fg-subtle,
+  200: $rt-fg-muted, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -190,7 +136,6 @@ $mat-accent: (
   )
 );
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
-
 
 body {
   --warn-color: #ff0000;

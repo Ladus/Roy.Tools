@@ -1,5 +1,5 @@
 <!-- Toolbar -->
-<mat-toolbar color="primary" class="header">
+<mat-toolbar color="rt-header-bg" class="header">
   <mat-toolbar-row>
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
@@ -10,13 +10,13 @@
 
   <a mat-button *ngIf="loginDisplay" [routerLink]="['music']">Music</a>
 
-  <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+  <button mat-stroked-button *ngIf="!loginDisplay" (click)="login()">Login</button>
 
 
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container>
+<mat-sidenav-container color="rt-page-bg">
   <!-- Sidenav -->
   <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
@@ -46,9 +46,3 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<mat-toolbar color="primary" class="footer">
-  <mat-toolbar-row>
-   <div style="margin:0 auto;" class="mat-caption">Copyright 2020. The Brand Company.</div>
-  </mat-toolbar-row>
-</mat-toolbar>
