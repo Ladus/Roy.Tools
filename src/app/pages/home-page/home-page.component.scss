@@ -1,0 +1,11 @@
+@import "../../../colors.scss";
+
+.project-container {
+  display:flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+app-project-card {
+  flex-basis: 50%;
+}

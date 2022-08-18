@@ -1,0 +1,10 @@
+@import "../../../colors.scss";
+
+.project-card {
+  border-width: 1px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: $rt-header-bg;
+  padding: 16px;
+  margin: 8px;
+}

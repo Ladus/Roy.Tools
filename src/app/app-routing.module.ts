@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserUtils } from '@azure/msal-browser';
-import { HomePageComponent } from './home-page/home-page.component';
-import { MusicPageComponent } from './music-page/music-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MusicPageComponent } from './pages/music-page/music-page.component';
 
 const routes: Routes = [
   {

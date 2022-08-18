@@ -12,11 +12,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule  } from '@angular/material/button';
-import { CardComponentComponent } from './card-component/card-component.component';
+import { CardComponentComponent } from './components/card-component/card-component.component';
 import { MsalModule } from '@azure/msal-angular';
 import { PublicClientApplication } from '@azure/msal-browser';
-import { HomePageComponent } from './home-page/home-page.component';
-import { MusicPageComponent } from './music-page/music-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MusicPageComponent } from './pages/music-page/music-page.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -24,6 +25,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   declarations: [
     AppComponent,
       CardComponentComponent,
+      ProjectCardComponent,
       HomePageComponent,
       MusicPageComponent
    ],

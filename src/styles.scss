@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 html,
 body {
   height: 100%;
@@ -6,6 +8,12 @@ body {
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: $rt-page-bg;
+  color: $rt-fg-default;
+}
+
+h1 {
+  color: $rt-fg-default;
 }
 
 .header {

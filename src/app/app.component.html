@@ -1,10 +1,11 @@
 <!-- Toolbar -->
 <mat-toolbar color="rt-header-bg" class="header">
   <mat-toolbar-row>
-  <span class="nav-tool-items">
+  <span class="nav-tool-items" *ngIf="false">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
-  <div>Roy.Tools</div>
+  <div><a href="/"><img class="brand-image" src="/assets/favicon-32x32.png" /></a></div>
+  <div><a href="/" class="brand-title">Roy.Tools</a></div>
 
   <div class="toolbar-spacer"></div>
 
@@ -16,9 +17,9 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container color="rt-page-bg">
+<mat-sidenav-container *ngIf="false"  color="rt-page-bg">
   <!-- Sidenav -->
-  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+  <mat-sidenav  #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
       <a mat-list-item>
@@ -38,11 +39,27 @@
 
   <!-- Main content -->
   <mat-sidenav-content>
-
-    <div class="container">
-      <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
-      <router-outlet *ngIf="!isIframe"></router-outlet>
-    </div>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<div class="content-container">
+  <div class="content">
+    <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+    <router-outlet *ngIf="!isIframe"></router-outlet>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="footer">
+    <mat-divider></mat-divider>
+    <ol class="footer-links">
+      <li>Terms</li>
+      <li>Blog</li>
+      <li>About</li>
+    </ol>
+    <div class="copyright-container">
+      <span class="copyright">© 2022 - Roy.Tools</span>
+    </div>
+  </div>
+</div>
+
