@@ -18,6 +18,7 @@ import { PublicClientApplication } from '@azure/msal-browser';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MusicPageComponent } from './pages/music-page/music-page.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -40,6 +41,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     MatListModule,
     MatCardModule,
     MatButtonModule,
+    MatMenuModule,
     MsalModule.forRoot( new PublicClientApplication({
       auth: {
         clientId: '46b2788a-0799-48cb-aad5-89e3ddf6f6f6', // Application (client) ID from the app registration

@@ -1,9 +1,12 @@
 <div class="project-card">
-  <div>
-    <h1>{{Title}}</h1> <p>{{Visibility}}</p>
+  <div class="project-header">
+    <h2 class="" [routerLink]="['music']">{{Title}}</h2> <p class="label">{{Visibility}}</p>
   </div>
-  <p>
+  <p class="content">
     <ng-content></ng-content>
   </p>
-  <p>{{Category}}</p>
+  <p class="category">
+    <mat-icon color="accent" [inline]="true">token</mat-icon>
+    {{Category}}
+  </p>
 </div>

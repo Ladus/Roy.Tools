@@ -9,10 +9,25 @@
 
   <div class="toolbar-spacer"></div>
 
-  <a mat-button *ngIf="loginDisplay" [routerLink]="['music']">Music</a>
+  <button  mat-button color="rt-fg-default">
+    <mat-icon>notifications</mat-icon>
+  </button>
 
-  <button mat-stroked-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+  <button  mat-button color="rt-fg-default" [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
 
+  <mat-menu #menu="matMenu" class="profile-menu">
+    <button mat-menu-item *ngIf="!loginDisplay" (click)="login()">
+      <mat-icon>login</mat-icon>
+      <span>Sign in</span>
+    </button>
+    <button mat-menu-item *ngIf="loginDisplay">
+      <mat-icon>logout</mat-icon>
+      <span>Sign out</span>
+    </button>
+  </mat-menu>
 
   </mat-toolbar-row>
 </mat-toolbar>

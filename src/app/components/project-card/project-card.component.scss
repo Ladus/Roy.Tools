@@ -2,9 +2,54 @@
 
 .project-card {
   border-width: 1px;
-  border-radius: 3px;
+  border-radius: 6px;
   border-style: solid;
   border-color: $rt-header-bg;
   padding: 16px;
   margin: 8px;
+  color: $rt-fg-subtle;
+  max-width: 300px;
+  min-width: 300px;
+  position: relative;
+  width: calc(100% - 48px);
+  height: calc(100% - 48px);
+}
+
+.project-header {
+  display: flex;
+  margin: 0 0 12px 0;
+  height: 20px;
+}
+
+.project-header h2 {
+  color: $rt-primary-link;
+  flex: auto;
+  font-size: 16px;
+  margin: 0;
+}
+
+.project-header h2.inactive {
+  color: $rt-fg-muted;
+  flex: auto;
+}
+
+.label {
+  display: inline-block;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: $rt-header-bg;
+}
+
+.category mat-icon {
+  display: inline-block;
+  line-height:12px;
+}
+
+.category {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 12px;
 }
